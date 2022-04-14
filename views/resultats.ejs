@@ -23,17 +23,22 @@
         Weather App
        <a class="logout" href="/users/logout">Deconnexion</a>
    </nav> 
-
-</br></br></br></br></br></br></br></br></br></br></br>
-
-                <div class="saisie">
-                    <form action="/search" method="POST">
-                    <input class="textArea" type="text" name="from" value="" placeholder="From: Paris, Marseille " >
-                    <input class="textArea" type="text" name="to" value="" placeholder="To: Lille, Nantes" >
-                    <input class="textArea" type="date" name="when" value="">
-                    <input class="btn btn-warning" type="submit" value="Add">
-                    </form>
+   <!-- <%//console.log(alerte)%> -->
+   <div class ="second-ligne ">
+    <div class="carte col-5">
+        <div id="worldmap"></div>
+    </div>
+    <div class="col-6"></div>
+        <div class="row actu col-6">
+                <div class="etiquette col-6 justify-content-between last-row">
+                    <div class="col-1 text">Name</div>  
+                    <div class="col-2">description <img class="nuage" src="../images/picto-1.png"></div>
+                    <span class="badge rounded-pill bg-warning text-dark">23°</span>
+                    <span class="badge rounded-pill bg-secondary">50°</span>
                 </div>
+                    <div class="col-1"><a href="/" class="fa-solid fa-xmark"></a></div>
+        </div>
+    </div>
 
     <script src="../javascripts/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
