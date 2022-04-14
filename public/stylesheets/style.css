@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+.textArea{
+  width: 39vh;
+  height: 4vh;
+}

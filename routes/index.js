@@ -26,7 +26,23 @@ var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  
   res.render('login', { title: 'Express' });
+});
+
+router.get('/oneway', async function(req, res, next) {
+  var travelFoundFilter = [];
+  var travelFound = await journeyModel.find(
+    { departure: req.query.from, arrivale: req.query.to }
+ );
+ for(i=0;i<travelFound;i++){
+      if(travelFound[i].date>req.query.when){
+        travelFoundFilter.push(travelFound[i]);
+      }
+}
+console.log(travelFound);
+console.log(travelFoundFilter);
+  res.render('oneway', { travelFoundFilter: travelFoundFilter });
 });
 
 
