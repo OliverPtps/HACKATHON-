@@ -26,7 +26,7 @@ router.post('/search', async function(req, res, next) {
  );
  console.log(travelFound);
       if(travelFound.length == 0){
-        res.render('oneway', { travelFound: travelFound});
+        res.render('redirect', { travelFound: travelFound});
       }else{
         res.render('resultats', { travelFound: travelFound, alerte:alerte });
       }
