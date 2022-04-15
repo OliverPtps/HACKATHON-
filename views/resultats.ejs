@@ -31,9 +31,15 @@
        <a class="logout" href="/users/logout">Deconnexion</a>
    </nav> 
 <%if(travelFound.length == 0){%>
-    <h1>Oups ! Aucun train disponible</h1>
-    <div class="BoutonCheck">
-      <a href="/" class="btn btn-outline-danger">Home</a>
+    <div class="centre">
+        <div>
+        <h1 class="topplus">Oups ! Aucun train disponible</h1>
+        </div>
+    </div>
+    <div class="centre">
+        <div class="BoutonCheck">
+            <a href="/" class="btn btn-outline-danger">Home</a>
+        </div>
     </div>
 <%}else{%>
 <div class="container">
