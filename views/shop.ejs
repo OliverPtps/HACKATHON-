@@ -9,40 +9,50 @@
     <title>Recap</title>
 </head>
 <body>
-    
+   
+    <!-- HEADER --> 
     <%- include('navbar'); %>
-
-
-    <!-- HEADER -->
-    <nav class=" header navbar navbar-light bg-dark">
-        Train App
-       <a class="logout" href="/users/logout">Deconnexion</a>
-   </nav> 
 
 <div class="container">
 <div class="row"> 
-    <h2 class="topplus">Tickets disponibles pour le 20/8:</h2>
-   <div class ="second-ligne">
-   
-    <%for(var i=0;i<session1.length;i++){%>
-
+    <div class="first-ligne">
         <div class="row actu">
-                <div class="etiquette col-4 justify-content-between">
-                    <div class="col-1 text"><%= session1[i].departure %>/<%= session1[i].arrival %></div>  
-                    <div class="col-2"><%= session1[i].date %></div>
-                    <div class="col-2"><%= session1[i].price %></div>
-                    
+            <div class="etiquetteHead topplus2 col-4 justify-content-between">
+                <div class="col-1 text">N°</div>  
+                <div class="col-2">Voyage:</div>
+                <div class="col-2">Date:</div>
+                <div class="col-1">Heure de départ:</div>
+                <div class="col-1">Price</div>
+            </div>
+    </div>
+    </div>
+   <div class ="second-ligne">
+    <% for (var i=0; i < session.length ;i++){%>
+        <div class="row actu">
+                <div class="etiquetteBody col-4 justify-content-between">
+                    <div class="col-1 text"><%= (i+1)%></div>  
+                    <div class="col-2"><%= session[i].departure %>/<%= session[i].arrival %></div>
+                    <div class="col-2"><%= session[i].date %></div>
+                    <div class="col-1"><%= session[i].departure %></div>
+                    <div class="col-1"><%= session[i].price %>€</div>
                 </div>
         </div>
-        <%}%>
-
+    <%}%>
+    <div class="row actu">
+        <div class="etiquetteFoot col-4">
+            <div>Total:</div> 
+        </div>
+</div>
+    </div>
+    <div class ="third-ligne">
+        <div class="col-1"><a href="/" class="btn btn-outline-danger">Valider</a></div>
     </div>
     </div>
 </div>
 </div>
 </div>
 
-      
+
 
 
 </body>

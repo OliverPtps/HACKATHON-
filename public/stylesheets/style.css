@@ -26,8 +26,42 @@ body {
   padding: 35px;
   margin-bottom: 10px;
 }
+.etiquetteHead{
+  display: flex;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-top: 1px solid #DADADA;
+  border-right: 1px solid #DADADA;
+  border-left: 1px solid #DADADA;
+  padding: 10px;
+}
+.etiquetteBody{
+  display: flex;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-top: 1px solid #DADADA;
+  border-right: 1px solid #DADADA;
+  border-left: 1px solid #DADADA;
+  padding: 35px;
+}
+.etiquetteFoot{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: #eec4c4;
+  border-top: 1px solid #DADADA;
+  border-right: 1px solid #DADADA;
+  border-left: 1px solid #DADADA;
+  padding: 10px;
+}
+
 .second-ligne{
   text-align: center;
+}
+.third-ligne{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px 
 }
 .flexCenter{
   display: flex;
@@ -37,6 +71,9 @@ body {
   margin-top: 10%;
   margin-bottom: 20px;
   color: white;
+}
+.topplus2{
+  margin-top: 10%;
 }
 .btn-outline-danger{
   background-color: red;
