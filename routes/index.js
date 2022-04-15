@@ -43,6 +43,14 @@ router.get('/resultats', function(req, res, next) {
   
   res.render('resultats', { title: 'Express' });
 });
+router.get('/shop', function(req, res, next) {
+  
+  res.render('shop', { title: 'Express' });
+});
+router.get('/lasttips', function(req, res, next) {
+  
+  res.render('lasttips', { title: 'Express' });
+});
 
 // // Remplissage de la base de donnée, une fois suffit
 // router.get('/save', async function(req, res, next) {
