@@ -16,6 +16,46 @@ body {
 .table {
   background: white;
 }
-
-
-
+.etiquette{
+  display: flex;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-top: 1px solid #DADADA;
+  border-right: 1px solid #DADADA;
+  border-left: 1px solid #DADADA;
+  padding: 35px;
+  margin-bottom: 10px;
+}
+.second-ligne{
+  text-align: center;
+}
+.flexCenter{
+  display: flex;
+  justify-content: center;
+}
+.topplus{
+  margin-top: 10%;
+  margin-bottom: 20px;
+  color: white;
+}
+.btn-outline-danger{
+  background-color: red;
+  color: white;
+}
+.textArea{
+  width: 49vh;
+  height: 4vh;
+  border: 1px solid #DADADA;
+}
+.mini{
+  font-size: x-small;
+  opacity: 50%;
+  text-align: right;
+  margin-right: 11%;
+}
+.centre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}

@@ -30,12 +30,8 @@ router.post('/search', async function(req, res, next) {
   var travelFound = await journeyModel.find(
     { departure: req.body.from, arrival: req.body.to, date : req.body.when}
  );
- console.log(travelFound);
-      if(travelFound.length == 0){
-        res.render('redirect', { travelFound: travelFound});
-      }else{
-        res.render('resultats', { travelFound: travelFound, alerte:alerte });
-      }
+ 
+  res.render('resultats', { travelFound: travelFound });
 });
 
 router.get('/redirect', function(req, res, next) {

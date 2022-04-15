@@ -25,56 +25,37 @@
       </nav>
 
 
-      
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">N°</th>
-          <th scope="col">Journey</th>
-          <th scope="col">Date</th>
-          <th scope="col">Departure</th>
-          <th scope="col">Price</th>
-        </tr>
-      </thead>
-      <tbody>
-
-       <% for (var i=0; i < travelFound.length; i++) {%>
-
-        <tr>
-          <th scope="row"><%= (i+1) %></th>
-          <td><%= travelFound[i].departure %>/<%= travelFound[i].arrival %></td>
-          <td><%= travelFound[i].date %></td>
-          <td><%= travelFound[i].departureTime %></td>
-          <td><%= travelFound[i].price %></td>
-        </tr>
-
-       <%}%>
-
-          
-
-        
-
-        
-      </tbody>
-    </table>
-
-
-    <div class="row">
-        <div class="col-8 text-right">
-            <form action="#" method="POST">
-            <button class="btn btn-danger" type='submit' name="button-confirm">Confirm</button>
-            </form>
-        </div>
+    <!-- HEADER -->
+    <nav class=" header navbar navbar-light bg-dark">
+        Weather App
+       <a class="logout" href="/users/logout">Deconnexion</a>
+   </nav> 
+<%if(travelFound.length == 0){%>
+    <h1>Oups ! Aucun train disponible</h1>
+    <div class="BoutonCheck">
+      <a href="/" class="btn btn-outline-danger">Home</a>
     </div>
-
-
-
-
-
-    
+<%}else{%>
+<div class="container">
+<div class="row"> 
+    <h2 class="topplus">Tickets disponibles pour le 20/8:</h2>
+   <div class ="second-ligne">
+    <%for(var i=0;i<travelFound.length;i++){%>
+        <div class="row actu">
+                <div class="etiquette col-4 justify-content-between">
+                    <div class="col-1 text"><%=travelFound[i].departure%>/<%=travelFound[i].arrival%></div>  
+                    <div class="col-2">Train de départ à: <%=travelFound[i].departureTime%></div>
+                    <div class="col-2"><%=travelFound[i].price%>€</div>
+                    <div class="col-1"><a href="/" class="btn btn-outline-danger">OK</a></div>
+                </div>
+        </div>
+    <%}%>
+    </div>
+    </div>
 </div>
-
+</div>
+</div>
+<%}%>
       
 
 
