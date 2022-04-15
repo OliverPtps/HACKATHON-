@@ -2,27 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 const mongoose = require('mongoose');
-
-// useNewUrlParser ;)
-var options = {
-  connectTimeoutMS: 5000,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
- };
-
-var journeySchema = mongoose.Schema({
-  departure: String,
-  arrival: String,
-  date: Date,
-  departureTime: String,
-  price: Number,
-});
-
-var journeyModel = mongoose.model('journey', journeySchema);
+var journeyModel = require('../models/ticket');
 
 var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
 var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 
+var alerte = null;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -32,27 +17,32 @@ router.get('/', function(req, res, next) {
   res.render('login', { title: 'Express' });
 });
 
-router.get('/oneway', async function(req, res, next) {
-  var travelFoundFilter = [];
+router.get('/oneway', function(req, res, next) {
+  
+  res.render('oneway', { title: 'Express' });
+});
+
+router.post('/search', async function(req, res, next) {
   var travelFound = await journeyModel.find(
-    { departure: req.query.from, arrivale: req.query.to }
+    { departure: req.body.from, arrival: req.body.to, date : req.body.when}
  );
- for(i=0;i<travelFound;i++){
-      if(travelFound[i].date>req.query.when){
-        travelFoundFilter.push(travelFound[i]);
+ console.log(travelFound);
+      if(travelFound.length == 0){
+        res.render('redirect', { travelFound: travelFound});
+      }else{
+        res.render('resultats', { travelFound: travelFound, alerte:alerte });
       }
-}
-console.log(travelFound);
-console.log(travelFoundFilter);
-  res.render('oneway', { travelFoundFilter: travelFoundFilter });
 });
 
-router.get('/home', function(req, res, next) {
-
-
-  res.render('homepage', { title: 'Express' });
+router.get('/redirect', function(req, res, next) {
+  
+  res.render('redirect', { title: 'Express' });
 });
 
+router.get('/resultats', function(req, res, next) {
+  
+  res.render('resultats', { title: 'Express' });
+});
 
 // // Remplissage de la base de donnée, une fois suffit
 // router.get('/save', async function(req, res, next) {
