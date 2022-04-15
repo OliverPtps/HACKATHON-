@@ -27,10 +27,12 @@
     </div>
     </div>
    <div class ="second-ligne">
-    <% for (var i=0; i < session.length ;i++){%>
+
+    <% for (var i=0; i < session.length ; i++) {%>
+
         <div class="row actu">
                 <div class="etiquetteBody col-4 justify-content-between">
-                    <div class="col-1 text"><%= (i+1)%></div>  
+                    <div class="col-1 text"></div>  
                     <div class="col-2"><%= session[i].departure %>/<%= session[i].arrival %></div>
                     <div class="col-2"><%= session[i].date %></div>
                     <div class="col-1"><%= session[i].departure %></div>

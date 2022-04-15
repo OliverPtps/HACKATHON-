@@ -112,10 +112,11 @@ router.get('/shop', async function(req, res, next) {
   if(!req.session.shop){
   req.session.shop = [];
   }
-  
+  console.log(req.session.shop)
   var train = await journeyModel.findById(req.query.id);
  
   req.session.shop.push(train)
+  
   
   res.render('shop', {session: req.session.shop});
 });
