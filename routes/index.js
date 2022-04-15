@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var journeyModel = require('../models/ticket');
 
 var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
@@ -11,15 +11,19 @@ var alerte = null;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  
 
   
   res.render('login', { title: 'Express' });
 });
 
 router.get('/oneway', function(req, res, next) {
-  
-  res.render('oneway', { title: 'Express' });
+
+  if (!req.session.user) {
+    res.redirect('/')
+  }else{
+    res.render('oneway', { title: 'Express' });
+  }
+  console.log(req.session)
 });
 
 router.post('/search', async function(req, res, next) {
