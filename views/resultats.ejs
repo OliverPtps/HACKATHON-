@@ -23,22 +23,26 @@
         Weather App
        <a class="logout" href="/users/logout">Deconnexion</a>
    </nav> 
-   <!-- <%//console.log(alerte)%> -->
-   <div class ="second-ligne ">
-    <div class="carte col-5">
-        <div id="worldmap"></div>
-    </div>
-    <div class="col-6"></div>
-        <div class="row actu col-6">
-                <div class="etiquette col-6 justify-content-between last-row">
-                    <div class="col-1 text">Name</div>  
-                    <div class="col-2">description <img class="nuage" src="../images/picto-1.png"></div>
-                    <span class="badge rounded-pill bg-warning text-dark">23°</span>
-                    <span class="badge rounded-pill bg-secondary">50°</span>
+
+<div class="container">
+<div class="row"> 
+    <h2 class="topplus">Tickets disponibles pour le 20/8:</h2>
+   <div class ="second-ligne">
+    <%for(var i=0;i<travelFound.length;i++){%>
+        <div class="row actu">
+                <div class="etiquette col-4 justify-content-between">
+                    <div class="col-1 text"><%=travelFound[i].departure%>/<%=travelFound[i].arrival%></div>  
+                    <div class="col-2">Train de départ à: <%=travelFound[i].departureTime%></div>
+                    <div class="col-2"><%=travelFound[i].price%>€</div>
+                    <div class="col-1"><a href="/" class="btn btn-outline-danger">OK</a></div>
                 </div>
-                    <div class="col-1"><a href="/" class="fa-solid fa-xmark"></a></div>
         </div>
+    <%}%>
     </div>
+    </div>
+</div>
+</div>
+
 
     <script src="../javascripts/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

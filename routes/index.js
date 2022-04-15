@@ -12,6 +12,8 @@ var alerte = null;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   
+
+  
   res.render('login', { title: 'Express' });
 });
 
@@ -24,11 +26,11 @@ router.post('/search', async function(req, res, next) {
   var travelFound = await journeyModel.find(
     { departure: req.body.from, arrival: req.body.to, date : req.body.when}
  );
- console.log(travelFound);
+ 
       if(travelFound.length == 0){
-        res.render('redirect', { travelFound: travelFound});
+        res.render('redirect', { });
       }else{
-        res.render('resultats', { travelFound: travelFound, alerte:alerte });
+        res.render('resultats', { travelFound: travelFound });
       }
 });
 

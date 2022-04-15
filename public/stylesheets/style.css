@@ -1,10 +1,8 @@
 body {
-
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: linear-gradient(#c6f4ff, #0d8ef1);
   background-repeat: none;
   min-height: 100vh;
-
 }
 
 .navbar {
@@ -14,7 +12,50 @@ body {
 .table {
   background: white;
 }
+
+.table {
+  background: white;
+}
+.etiquette{
+  display: flex;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-top: 1px solid #DADADA;
+  border-right: 1px solid #DADADA;
+  border-left: 1px solid #DADADA;
+  padding: 35px;
+  margin-bottom: 10px;
+}
+.second-ligne{
+  text-align: center;
+}
+.flexCenter{
+  display: flex;
+  justify-content: center;
+}
+.topplus{
+  margin-top: 10%;
+  margin-bottom: 20px;
+  color: white;
+}
+.btn-outline-danger{
+  background-color: red;
+  color: white;
+}
 .textArea{
-  width: 39vh;
+  width: 49vh;
   height: 4vh;
+  border: 1px solid #DADADA;
+}
+.mini{
+  font-size: x-small;
+  opacity: 50%;
+  text-align: right;
+  margin-right: 11%;
+}
+.centre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
 }
