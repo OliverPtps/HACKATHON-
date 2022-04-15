@@ -27,14 +27,16 @@
     </div>
     </div>
    <div class ="second-ligne">
-    <%for(var i=0;i<3;i++){%>
+
+    <% for (var i=0; i < session.length ; i++) {%>
+
         <div class="row actu">
                 <div class="etiquetteBody col-4 justify-content-between">
-                    <div class="col-1 text">AAAAAAAAAAAAAAAA</div>  
-                    <div class="col-2">Train de départ à: </div>
-                    <div class="col-2">€</div>
-                    <div class="col-1">OK</a></div>
-                    <div class="col-1">Price</div>
+                    <div class="col-1 text"></div>  
+                    <div class="col-2"><%= session[i].departure %>/<%= session[i].arrival %></div>
+                    <div class="col-2"><%= session[i].date %></div>
+                    <div class="col-1"><%= session[i].departure %></div>
+                    <div class="col-1"><%= session[i].price %>€</div>
                 </div>
         </div>
     <%}%>
@@ -52,7 +54,7 @@
 </div>
 </div>
 
-      
+
 
 
 </body>
