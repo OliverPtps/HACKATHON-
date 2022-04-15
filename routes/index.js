@@ -27,11 +27,7 @@ router.post('/search', async function(req, res, next) {
     { departure: req.body.from, arrival: req.body.to, date : req.body.when}
  );
  
-      if(travelFound.length == 0){
-        res.render('redirect', { });
-      }else{
-        res.render('resultats', { travelFound: travelFound });
-      }
+  res.render('resultats', { travelFound: travelFound });
 });
 
 router.get('/redirect', function(req, res, next) {
