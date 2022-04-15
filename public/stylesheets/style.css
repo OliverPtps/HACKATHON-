@@ -34,6 +34,7 @@ body {
   border-right: 1px solid #DADADA;
   border-left: 1px solid #DADADA;
   padding: 10px;
+  font-weight: bold;
 }
 .etiquetteBody{
   display: flex;
